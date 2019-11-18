@@ -1,12 +1,16 @@
 const router = require("express").Router()
+const axios = require("axios")
+const db= require("../db")
 
-const users = [
-  { id: 1, name: "Mike" },
-  { id: 2, name: "Ryan" }
-]
+const community = []
 
 router.get("/", (req, res, next) => {
-  res.json(users)
+  const sql =
+  `
+  SELECT name, id FROM categories WHERE parent_id=1
+  `
+  db.query(sql, (err,results,fields)=>{
+    res.json(results)
+  })
 })
-
 module.exports = router
