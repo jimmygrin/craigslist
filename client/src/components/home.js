@@ -6,7 +6,7 @@ import { useUsers } from '../hooks'
 export default props => {
 
     const { users } = useUsers()
-
+    console.log(users)
     return (
         <div id="main">
         <div id="leftcol">
@@ -44,8 +44,11 @@ export default props => {
             <div id="categories">
                 <div id="leftcat">
                     <div><Link to="/community">community</Link></div>
-                 
-             
+                  <div>
+                   { users.map(user => (
+                <p key={user.id}>{user.name}</p>
+                ))}
+                </div>
                     
                     <div><Link to="/housing">housing</Link></div>
                     <div><Link to="/jobs">jobs</Link></div>

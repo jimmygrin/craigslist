@@ -4,10 +4,10 @@ const db= require("../db")
 
 const community = []
 
-router.get("/", (req, res, next) => {
+router.get("/parents", (req, res, next) => {
   const sql =
   `
-  SELECT name, id FROM categories WHERE parent_id=1
+  SELECT name, id FROM categories WHERE parent_id is null
   `
   db.query(sql, (err,results,fields)=>{
     res.json(results)

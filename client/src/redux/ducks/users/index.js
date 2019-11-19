@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
 
 const getUsers = () => {
   return dispatch => {
-    axios.get("/").then(resp => {
+    axios.get("/users/parents").then(resp => {
       dispatch({
         type: GET_USERS,
         payload: resp.data
@@ -36,12 +36,13 @@ const getUsers = () => {
 
 //custom hooks
 
-export const useUsers = function() {
+export const useUsers = () => {
     const dispatch = useDispatch()
-    const users = () => dispatch (getUsers())
+    const users = useSelector(appState => appState.userState.users)
 
-    useEffect(()=>{
-        getUsers()}, [])
+    useEffect(() => {
+      dispatch(getUsers())
+    }, [dispatch])
     
 return { users } 
 }
