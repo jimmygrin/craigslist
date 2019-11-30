@@ -1,0 +1,9 @@
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }

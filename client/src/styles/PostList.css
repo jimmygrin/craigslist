@@ -1,0 +1,13 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background: #eeeeee;
+    text-transform: capitalize;
+  }
+  
+  .posts {
+    display: flex;
+    flex-direction: column;
+  }

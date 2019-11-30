@@ -8,7 +8,7 @@ const pool = mysql.createPool({
     database: "craigslist"
 })
 
-module.exports = pool
+module.exports = pool;
 
 
 
